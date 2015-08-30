@@ -22,18 +22,17 @@ define(['Class'],function(Class){
     var Handler = Class.extend({
         init:function(_game){
             game = _game;
+        },
+        getWidth:function(){
+            return game.getWidth();
+        },
+        getHeight:function(){
+            return game.getHeight();
+        },
+        getKeyManager:function(){
+            return game.getKeyManager();
         }
     });
-
-    Handler.prototype.getWidth = function(){
-        return game.getWidth();
-    };
-    Handler.prototype.getHeight = function(){
-        return game.getHeight();
-    };
-    Handler.prototype.getKeyManager = function(){
-        return game.getKeyManager();
-    };
 
     return Handler;
 });

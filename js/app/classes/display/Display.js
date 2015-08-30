@@ -25,6 +25,20 @@ define(['Jquery','Class'],function($,Class){
             width = _width;
             height = _height;
             createDisplay();
+        },
+
+        //Getters
+        getTitle:function(){
+            return title;
+        },
+        getWidth:function(){
+            return width;
+        },
+        getHeight:function(){
+            return height;
+        },
+        getGraphics:function(){
+            return graphics;
         }
     });
 
@@ -36,20 +50,6 @@ define(['Jquery','Class'],function($,Class){
         graphics = document.getElementById("canvas").getContext("2d");
 
     }
-
-    //Getters
-    Display.prototype.getTitle = function(){
-        return title;
-    };
-    Display.prototype.getWidth = function(){
-        return width;
-    };
-    Display.prototype.getHeight = function(){
-        return height;
-    };
-    Display.prototype.getGraphics = function(){
-        return graphics;
-    };
 
     CanvasRenderingContext2D.prototype.myDrawImage = function(asset,_x,_y,_width,_height){
         this.drawImage(asset.sheet,

@@ -22,15 +22,10 @@ define(['Class'],function(Class){
     var State = Class.extend({
         init:function(_handler){
             this.handler = _handler;
-        }
-
+        },
+        tick:function(_dt){},
+        render:function(_g){}
     });
-
-    State.prototype.tick = function(_dt){
-    };
-
-    State.prototype.render = function(_g){
-    };
 
     State.getState = function(){
         return currentState;
