@@ -28,6 +28,7 @@ requirejs.config({
         "Display":"app/classes/display/Display",
         "Entity":"app/classes/entities/Entity",
         "Game":"app/classes/Game",
+        "GameCamera":"app/classes/gfx/GameCamera",
         "GameState":"app/classes/states/GameState",
         "GrassTile":"app/classes/tiles/GrassTile",
         "Handler":"app/classes/Handler",
@@ -40,6 +41,7 @@ requirejs.config({
         "StoneTile":"app/classes/tiles/StoneTile",
         "Tile":"app/classes/tiles/Tile",
         "TileLoader":"app/classes/tiles/TileLoader",
+        "Utils":"app/classes/utils/Utils",
         "World":"app/classes/worlds/World"
     }
 });

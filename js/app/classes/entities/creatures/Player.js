@@ -21,14 +21,15 @@ define(['Creature','Assets'],function(Creature,Assets){
         init:function(_handler,_x,_y){
             this._super(_handler,_x,_y,Creature.DEFAULT_WIDTH,Creature.DEFAULT_CREATURE_HEIGHT);
             this.assets = Assets.getAssets('player');
-            this.speed = 50;
+
         },
         tick:function(_dt){
             this.getInput(_dt);
             this.move();
+            this.handler.getGameCamera().centerOnEntity(this);
         },
         render:function(_g){
-            _g.myDrawImage(this.assets.idle,this.x,this.y,this.assets.width,this.assets.height);
+            _g.myDrawImage(this.assets.idle,this.x - this.handler.getGameCamera().getxOffset(),this.y - this.handler.getGameCamera().getyOffset(),this.assets.width,this.assets.height);
 
         },
         getInput:function(_dt) {

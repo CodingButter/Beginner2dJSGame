@@ -22,7 +22,7 @@ define(['State','Player','World'],function(State,Player,World){
         init:function(_handler){
             this._super(_handler);
             this.player = new Player(_handler,20,20);
-            this.world = new World("");
+            this.world = new World("res/worlds/world1.wrd",_handler);
         },
 
         tick:function(_dt){

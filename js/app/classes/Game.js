@@ -15,11 +15,11 @@
  * Dependencies
  * 
  */
-define(['Class','Display','State','GameState','KeyManager','Handler'],function(Class,Display,State,GameState,KeyManager,Handler){
+define(['Class','Display','State','GameState','KeyManager','Handler','GameCamera'],function(Class,Display,State,GameState,KeyManager,Handler,GameCamera){
 
     var _this;
     var running = false;
-    var title,width,height,g,display,keyManager,handler;
+    var title,width,height,g,display,keyManager,handler,gameCamera;
     var gameState,menuState,settingsState;
 
     var Game = Class.extend({
@@ -69,13 +69,17 @@ define(['Class','Display','State','GameState','KeyManager','Handler'],function(C
         },
         getHeight:function(){
             return height;
+        },
+        getGameCamera:function(){
+            return gameCamera;
         }
     });
 
     function init(){
-        display = new Display(title,width,height)
+        display = new Display(title,width,height);
         g = display.getGraphics();
         handler = new Handler(_this);
+        gameCamera = new GameCamera(handler,0,0);
         gameState = new GameState(handler);
         State.setState(gameState);
     }
