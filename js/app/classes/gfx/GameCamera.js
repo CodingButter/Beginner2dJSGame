@@ -15,7 +15,7 @@
  * Dependencies
  * 
  */
-define(['Class'],function(Class){
+define(['Class','Tile'],function(Class,Tile){
     var xOffset,yOffset,handler;
     var GameCamera = Class.extend({
         init:function(_handler,_xOffset,_yOffset){
@@ -26,10 +26,12 @@ define(['Class'],function(Class){
         centerOnEntity:function(e){
             xOffset = e.getX() - handler.getWidth()/2 + e.getWidth()/2;
             yOffset = e.getY() - handler.getHeight()/2 + e.getHeight()/2;
+            this.checkBlankSpace();
         },
         move:function(_xAmt,_yAmt){
             xOffset += _xAmt;
             yOffset += _yAmt;
+            this.checkBlankSpace();
         },
         //Getters
         getxOffset:function(){
@@ -44,6 +46,18 @@ define(['Class'],function(Class){
         },
         setyOffset:function(_offset){
             yOffset = _offset;
+        },
+        checkBlankSpace:function(){
+            if(xOffset<0){
+                xOffset = 0;
+            }else if (xOffset > handler.getWorld().getWidth() * Tile.TILEWIDTH - handler.getWidth()){
+                xOffset = handler.getWorld().getWidth() * Tile.TILEWIDTH - handler.getWidth();
+            }
+            if(yOffset<0) {
+                yOffset = 0;
+            }else if (yOffset > handler.getWorld().getHeight() * Tile.TILEHEIGHT - handler.getHeight()){
+                yOffset = handler.getWorld().getHeight() * Tile.TILEHEIGHT - handler.getHeight();
+            }
         }
     });
 

@@ -15,7 +15,7 @@
  * Dependencies
  * 
  */
-define(['Entity'],function(Entity){
+define(['Entity',"Tile"],function(Entity,Tile){
 
     var DEFAULT_SPEED = 250,
         DEFAULT_HEALTH = 10,
@@ -35,10 +35,37 @@ define(['Entity'],function(Entity){
             this.moveY();
         },
         moveX:function(){
-            this.x+=this.xMove;
+            if(this.xMove>0){
+                var tx = parseInt((this.x + this.xMove + this.bounds.x + this.bounds.width) / Tile.TILEWIDTH);
+                if(!this.collisionWithTile(tx,parseInt((this.y+this.bounds.y)/Tile.TILEHEIGHT))&&
+                    !this.collisionWithTile(tx,parseInt((this.y+this.bounds.y + this.bounds.height)/Tile.TILEHEIGHT))){
+                    this.x+= parseInt(this.xMove);
+                }
+            }else{
+                var tx = parseInt((this.x + this.xMove + this.bounds.x) / Tile.TILEWIDTH);
+                if(!this.collisionWithTile(tx,parseInt((this.y+this.bounds.y)/Tile.TILEHEIGHT))&&
+                    !this.collisionWithTile(tx,parseInt((this.y+this.bounds.y + this.bounds.height)/Tile.TILEHEIGHT))){
+                    this.x+= parseInt(this.xMove);
+                }
+            }
         },
         moveY:function(){
-            this.y+=this.yMove;
+            if(this.yMove>0){
+                var ty = parseInt((this.y + this.yMove + this.bounds.y + this.bounds.height) / Tile.TILEHEIGHT);
+                if(!this.collisionWithTile(parseInt((this.x+this.bounds.x)/Tile.TILEWIDTH),ty)&&
+                    !this.collisionWithTile(parseInt((this.x+this.bounds.x + this.bounds.width)/Tile.TILEWIDTH),ty)){
+                    this.y+= parseInt(this.yMove);
+                }
+            }else{
+                var ty = parseInt((this.y + this.yMove + this.bounds.y) / Tile.TILEHEIGHT);
+                if(!this.collisionWithTile(parseInt((this.x+this.bounds.x)/Tile.TILEWIDTH),ty)&&
+                    !this.collisionWithTile(parseInt((this.x+this.bounds.x + this.bounds.width)/Tile.TILEWIDTH),ty)){
+                    this.y+= parseInt(this.yMove);
+                }
+            }
+        },
+        collisionWithTile:function(_x,_y){
+            return this.handler.getWorld().getTile(_x,_y).isSolid();
         },
         //Getters
         getHealth:function(){

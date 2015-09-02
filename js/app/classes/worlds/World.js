@@ -16,13 +16,12 @@
  * 
  */
 define(['Class','TileLoader','Utils'],function(Class,Tile,Utils){
-
     var World = Class.extend({
         init:function(_path,_handler){
             this.tiles = [];
             this.loadWorld(_path);
             this.handler = _handler;
-
+            _handler.setWorld(this);
         },
         loadWorld:function(_path){
             var file = Utils.loadFileAsString(_path);
@@ -49,7 +48,7 @@ define(['Class','TileLoader','Utils'],function(Class,Tile,Utils){
                 (this.handler.getGameCamera().getxOffset() + this.handler.getWidth()) / Tile.TILEWIDTH + 1));
 
             var yStart = parseInt(Math.max(0,
-            this.handler.getGameCamera().getyOffset()/Tile.TILEWIDTH));
+            this.handler.getGameCamera().getyOffset()/Tile.TILEHEIGHT));
             var yEnd = parseInt(Math.min(this.height,
                 (this.handler.getGameCamera().getyOffset() + this.handler.getHeight()) / Tile.TILEHEIGHT + 1));
 
@@ -61,8 +60,13 @@ define(['Class','TileLoader','Utils'],function(Class,Tile,Utils){
         },
         getTile:function(_x,_y){
             return Tile.tiles[this.tiles[_x][_y]];
+        },
+        getWidth:function(){
+            return this.width;
+        },
+        getHeight:function(){
+            return this.height;
         }
-
     });
 
     return World;

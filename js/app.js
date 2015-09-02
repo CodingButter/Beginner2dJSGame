@@ -36,6 +36,7 @@ requirejs.config({
         "KeyManager":"app/classes/input/KeyManager",
         "Launcher":"app/classes/Launcher",
         "Player":"app/classes/entities/creatures/Player",
+        "Rectangle":"app/classes/gfx/shapes/Rectangle",
         "SpriteSheet":"app/classes/gfx/SpriteSheet",
         "State":"app/classes/states/State",
         "StoneTile":"app/classes/tiles/StoneTile",
