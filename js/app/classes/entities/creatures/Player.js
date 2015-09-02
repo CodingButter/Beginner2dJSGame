@@ -19,7 +19,7 @@ define(['Creature','Assets'],function(Creature,Assets){
 
     var Player = Creature.extend({
         init:function(_handler,_x,_y){
-            this._super(_handler,_x,_y,Creature.DEFAULT_WIDTH,Creature.DEFAULT_CREATURE_HEIGHT);
+            this._super(_handler,_x,_y,Creature.DEFAULT_CREATURE_WIDTH,Creature.DEFAULT_CREATURE_HEIGHT);
             this.assets = Assets.getAssets('player');
 
         },

@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f08d19c4-cbc0-447e-a173-22baa2d0eaab" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/classes/gfx/GameCamera.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/classes/utils/Utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/worlds/world1.wrd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/classes/Game.js" afterPath="$PROJECT_DIR$/js/app/classes/Game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/classes/States/GameState.js" afterPath="$PROJECT_DIR$/js/app/classes/States/GameState.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/classes/Handler.js" afterPath="$PROJECT_DIR$/js/app/classes/Handler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/classes/gfx/GameCamera.js" afterPath="$PROJECT_DIR$/js/app/classes/gfx/GameCamera.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/classes/entities/creatures/Player.js" afterPath="$PROJECT_DIR$/js/app/classes/entities/creatures/Player.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/classes/worlds/World.js" afterPath="$PROJECT_DIR$/js/app/classes/worlds/World.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/libs/jquery.js" afterPath="$PROJECT_DIR$/js/libs/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/worlds/world1.wrd" afterPath="$PROJECT_DIR$/res/worlds/world1.wrd" />
     </list>
     <ignored path="TileGame.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,16 +36,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameCamera.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/app/classes/gfx/GameCamera.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5151515">
-              <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Handler.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/app/classes/Handler.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -67,37 +50,17 @@
         <entry file="file://$PROJECT_DIR$/js/app/classes/worlds/World.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="166" selection-start-line="48" selection-start-column="166" selection-end-line="48" selection-end-column="166" />
+              <caret line="57" column="58" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/app/classes/entities/creatures/Player.js">
+      <file leaf-file-name="world1.wrd" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/worlds/world1.wrd">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="137" selection-start-line="31" selection-start-column="137" selection-end-line="31" selection-end-column="137" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Game.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/app/classes/Game.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="30" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameState.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/app/classes/States/GameState.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+              <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -144,14 +107,14 @@
         <option value="$PROJECT_DIR$/js/app/classes/tiles/Tile.js" />
         <option value="$PROJECT_DIR$/js/app/classes/utils/Utils.js" />
         <option value="$PROJECT_DIR$/js/libs/jquery.js" />
-        <option value="$PROJECT_DIR$/res/worlds/world1.wrd" />
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/js/app/classes/Handler.js" />
         <option value="$PROJECT_DIR$/js/app/classes/Game.js" />
-        <option value="$PROJECT_DIR$/js/app/classes/entities/creatures/Player.js" />
         <option value="$PROJECT_DIR$/js/app/classes/States/GameState.js" />
-        <option value="$PROJECT_DIR$/js/app/classes/worlds/World.js" />
+        <option value="$PROJECT_DIR$/js/app/classes/entities/creatures/Player.js" />
         <option value="$PROJECT_DIR$/js/app/classes/gfx/GameCamera.js" />
+        <option value="$PROJECT_DIR$/js/app/classes/worlds/World.js" />
+        <option value="$PROJECT_DIR$/res/worlds/world1.wrd" />
       </list>
     </option>
   </component>
@@ -315,32 +278,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TileGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TileGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gfx" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -719,14 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app/classes/entities/Entity.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="10" selection-start-line="39" selection-start-column="12" selection-end-line="40" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/app/classes/tiles/DirtTile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -791,42 +720,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/worlds/world1.wrd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app/classes/entities/creatures/Creature.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/app/classes/Handler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="23" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app/classes/entities/creatures/Player.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="137" selection-start-line="31" selection-start-column="137" selection-end-line="31" selection-end-column="137" />
           <folding />
         </state>
       </provider>
@@ -847,18 +744,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app/classes/worlds/World.js">
+    <entry file="file://$PROJECT_DIR$/js/app/classes/entities/Entity.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="166" selection-start-line="48" selection-start-column="166" selection-end-line="48" selection-end-column="166" />
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/classes/entities/creatures/Creature.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/classes/entities/creatures/Player.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="69" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app/classes/gfx/GameCamera.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5151515">
-          <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+        <state vertical-scroll-proportion="-4.4074073">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/classes/worlds/World.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="58" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/worlds/world1.wrd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding />
         </state>
       </provider>

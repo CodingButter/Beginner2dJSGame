@@ -24,8 +24,8 @@ define(['Class'],function(Class){
             handler = _handler;
         },
         centerOnEntity:function(e){
-            xOffset = e.getX() - handler.getWidth()/2;
-            yOffset = e.getY() - handler.getHeight()/2;
+            xOffset = e.getX() - handler.getWidth()/2 + e.getWidth()/2;
+            yOffset = e.getY() - handler.getHeight()/2 + e.getHeight()/2;
         },
         move:function(_xAmt,_yAmt){
             xOffset += _xAmt;
