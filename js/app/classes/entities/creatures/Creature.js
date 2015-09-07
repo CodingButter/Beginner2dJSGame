@@ -39,14 +39,18 @@ define(['Entity',"Tile"],function(Entity,Tile){
                 var tx = parseInt((this.x + this.xMove + this.bounds.x + this.bounds.width) / Tile.TILEWIDTH);
                 if(!this.collisionWithTile(tx,parseInt((this.y+this.bounds.y)/Tile.TILEHEIGHT))&&
                     !this.collisionWithTile(tx,parseInt((this.y+this.bounds.y + this.bounds.height)/Tile.TILEHEIGHT))){
-                    this.x+= parseInt(this.xMove);
+                    this.x+= this.xMove;
+                }else{
+                    this.x = tx * Tile.TILEWIDTH - this.bounds.x - this.bounds.width - 1;
                 }
             }else{
                 var tx = parseInt((this.x + this.xMove + this.bounds.x) / Tile.TILEWIDTH);
                 if(!this.collisionWithTile(tx,parseInt((this.y+this.bounds.y)/Tile.TILEHEIGHT))&&
                     !this.collisionWithTile(tx,parseInt((this.y+this.bounds.y + this.bounds.height)/Tile.TILEHEIGHT))){
-                    this.x+= parseInt(this.xMove);
-                }
+                    this.x+= this.xMove;
+                }else{
+                    this.x = tx * Tile.TILEWIDTH + Tile.TILEWIDTH - this.bounds.x;
+            }
             }
         },
         moveY:function(){
@@ -54,14 +58,19 @@ define(['Entity',"Tile"],function(Entity,Tile){
                 var ty = parseInt((this.y + this.yMove + this.bounds.y + this.bounds.height) / Tile.TILEHEIGHT);
                 if(!this.collisionWithTile(parseInt((this.x+this.bounds.x)/Tile.TILEWIDTH),ty)&&
                     !this.collisionWithTile(parseInt((this.x+this.bounds.x + this.bounds.width)/Tile.TILEWIDTH),ty)){
-                    this.y+= parseInt(this.yMove);
+                    this.y+= this.yMove;
+                }else{
+                    this.y = ty * Tile.TILEHEIGHT - this.bounds.y - this.bounds.height - 1;
                 }
             }else{
                 var ty = parseInt((this.y + this.yMove + this.bounds.y) / Tile.TILEHEIGHT);
                 if(!this.collisionWithTile(parseInt((this.x+this.bounds.x)/Tile.TILEWIDTH),ty)&&
                     !this.collisionWithTile(parseInt((this.x+this.bounds.x + this.bounds.width)/Tile.TILEWIDTH),ty)){
-                    this.y+= parseInt(this.yMove);
+                    this.y+= this.yMove;
+                }else{
+                    this.y = ty * Tile.TILEHEIGHT + Tile.TILEHEIGHT - this.bounds.y;
                 }
+
             }
         },
         collisionWithTile:function(_x,_y){
