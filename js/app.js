@@ -22,6 +22,7 @@ requirejs.config({
         "Class":"libs/class",
         "Jquery":"libs/jquery",
         //Classes
+        "Animation":"app/classes/gfx/Animation",
         "Assets":"app/classes/gfx/Assets",
         "Creature":"app/classes/entities/creatures/Creature",
         "DirtTile":"app/classes/tiles/DirtTile",
