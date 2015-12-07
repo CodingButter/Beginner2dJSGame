@@ -8,12 +8,6 @@
  * https://github.com/jleelove/
  * jamie337nichols
  * Jamie337nichols@gmail.com
- *
- * Description
- * 
- *
- * Dependencies
- * 
  */
 define(['Class','ImageLoader','SpriteSheet','Animation'],function(Class,ImageLoader,SpriteSheet,Animation){
     var DEFAULT_WIDTH = 32,DEFAULT_HEIGHT = 32;

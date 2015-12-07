@@ -8,12 +8,6 @@
  * https://github.com/jleelove/
  * jamie337nichols
  * Jamie337nichols@gmail.com
- *
- * Description
- * 
- *
- * Dependencies
- * 
  */
 define(['Tile','GrassTile','DirtTile','StoneTile'],function(Tile,GrassTile,DirtTile,StoneTile){
     Tile.grassTile = new GrassTile(0);

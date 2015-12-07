@@ -8,12 +8,6 @@
  * https://github.com/jleelove/
  * jamie337nichols
  * Jamie337nichols@gmail.com
- *
- * Description
- * 
- *
- * Dependencies
- * 
  */
 define(['Class'],function(Class){
 

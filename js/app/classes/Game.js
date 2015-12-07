@@ -8,12 +8,6 @@
  * https://github.com/jleelove/
  * jamie337nichols
  * Jamie337nichols@gmail.com
- *
- * Description
- * 
- *
- * Dependencies
- * 
  */
 define(['Class','Display','State','GameState','KeyManager','Handler','GameCamera'],function(Class,Display,State,GameState,KeyManager,Handler,GameCamera){
 
@@ -61,7 +55,9 @@ define(['Class','Display','State','GameState','KeyManager','Handler','GameCamera
             running = true;
             this.run();
         },
-        getKeyManager:function() {
+        
+		//Getters
+		getKeyManager:function() {
             return keyManager;
         },
         getWidth:function(){
@@ -74,7 +70,6 @@ define(['Class','Display','State','GameState','KeyManager','Handler','GameCamera
             return gameCamera;
         }
     });
-
     function init(){
         display = new Display(title,width,height);
         g = display.getGraphics();
@@ -83,14 +78,12 @@ define(['Class','Display','State','GameState','KeyManager','Handler','GameCamera
         gameState = new GameState(handler);
         State.setState(gameState);
     }
-
     function tick(_dt) {
         keyManager.tick();
         if(State.getState()!=null){
             State.getState().tick(_dt);
         }
     }
-
     function render(){
         g.clearRect(0,0,width,height);
         if(State.getState()!=null){

@@ -1,5 +1,5 @@
 /*!
- * Launcher.js
+ * Launcher
  * Version: 1.0.0
  * Date: 2015/08/26
  * Source: https://gihub.com/jleelove/TileGame
@@ -8,12 +8,6 @@
  * https://github.com/jleelove/
  * jamie337nichols
  * Jamie337nichols@gmail.com
- *
- * Description
- *
- *
- * Dependencies
- *
  */
 define(['Class','Game'],function(Class,Game){
 

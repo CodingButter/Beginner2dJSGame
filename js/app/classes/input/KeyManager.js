@@ -7,13 +7,7 @@
  * Copyright (c) 2015 Jamie Nichols
  * https://github.com/jleelove/
  * jamie337nichols
- * Jamie337nichols@gmail.com
- *
- * Description
- * 
- *
- * Dependencies
- * 
+ * Jamie337nichols@gmail.com 
  */
 define(['Class'],function(Class){
 
