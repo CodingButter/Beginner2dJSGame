@@ -15,13 +15,17 @@
  * Dependencies
  * 
  */
-define(['Class','TileLoader','Utils'],function(Class,Tile,Utils){
-    var World = Class.extend({
+define(['Class','TileLoader','Utils','Tree'],function(Class,Tile,Utils,Tree){
+  
+  var tree;
+  
+  var World = Class.extend({
         init:function(_path,_handler){
             this.tiles = [];
             this.loadWorld(_path);
             this.handler = _handler;
             _handler.setWorld(this);
+			tree =  new Tree(_handler,40,50);
         },
         loadWorld:function(_path){
             var file = Utils.loadFileAsString(_path);
@@ -39,7 +43,7 @@ define(['Class','TileLoader','Utils'],function(Class,Tile,Utils){
             }
         },
         tick:function(_dt) {
-
+		
         },
         render:function(_g){
             var xStart = parseInt(Math.max(0,
@@ -57,6 +61,8 @@ define(['Class','TileLoader','Utils'],function(Class,Tile,Utils){
                     this.getTile(x,y).render(_g,x * Tile.TILEWIDTH - this.handler.getGameCamera().getxOffset(),y * Tile.TILEHEIGHT - this.handler.getGameCamera().getyOffset());
                 }
             }
+			
+			tree.render(_g);
         },
         getTile:function(_x,_y){
             return Tile.tiles[this.tiles[_x][_y]];

@@ -29,9 +29,9 @@ define(['Class','ImageLoader','SpriteSheet','Animation'],function(Class,ImageLoa
             this.sheet = new SpriteSheet(ImageLoader.loadImage(this.path));
             this.animations = {};
         },
-        addAnimation:function(_name,_animation){
-            this.animations[_name] = _animation;
-        }
+		addAnimation:function(_name,_animation){
+			this.animations[_name] = _animation;
+		}
     });
 
     Assets.DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -39,46 +39,58 @@ define(['Class','ImageLoader','SpriteSheet','Animation'],function(Class,ImageLoa
     Assets.getAssets = function(_name){
         return assets[_name];
     };
-
-    //Player asset
-    var player  = new Assets("player","res/textures/link.png",120,130);
-
-    //Add animations
-
-    //Walk Right
-    var frameduration = 30;
-    var walkrightframes = [];
-    var walkleftframes = [];
-    var walkupframes = [];
-    var walkdownframes = [];
-    var wrindex = 7;
-    var wlindex = 5;
-    var wuindex = 6;
-    var wdindex = 4;
-    for(var i = 0;i<10;i++){
-        var wrframe = {frame:player.sheet.crop(player.width * i, player.height * wrindex, player.width, player.height), speed:frameduration};
-        var wlframe = {frame:player.sheet.crop(player.width * i, player.height * wlindex, player.width, player.height), speed:frameduration};
-        var wuframe = {frame:player.sheet.crop(player.width * i, player.height * wuindex, player.width, player.height), speed:frameduration};
-        var wdframe = {frame:player.sheet.crop(player.width * i, player.height * wdindex, player.width, player.height), speed:frameduration};
-
-        walkrightframes.push(wrframe);
-        walkleftframes.push(wlframe);
-        walkupframes.push(wuframe);
-        walkdownframes.push(wdframe);
-    }
-
-    var idleframes = [
-        {frame:player.sheet.crop(0,0,player.width, player.height), speed:frameduration*80},
-        {frame:player.sheet.crop(player.width * 1,0, player.width, player.height), speed:frameduration},
-        {frame:player.sheet.crop(player.width * 2,0, player.width, player.height), speed:frameduration}
-    ];
-    //add Animation
-    player.addAnimation("walk_right",new Animation(walkrightframes));
-    player.addAnimation("walk_left",new Animation(walkleftframes));
-    player.addAnimation("walk_up",new Animation(walkupframes));
-    player.addAnimation("walk_down",new Animation(walkdownframes));
-    player.addAnimation("idle",new Animation(idleframes));
-
+	
+	//Create Player Assets
+	var player = new Assets("player","res/textures/link.png",120,130);
+	
+	//Build Frames
+	var framespeed = 75,
+	wrframes = [],
+	wlframes = [],
+	wuframes = [],
+	wdframes = [],
+	wrrow = 7,
+	wlrow = 5,
+	wurow = 6,
+	wdrow = 4;
+	for(var i = 0;i<10;i++){
+		wrframes.push({
+			frame:player.sheet.crop(player.width * i,player.height * wrrow,player.width,player.height),
+			speed:framespeed
+		});
+		wlframes.push({
+			frame:player.sheet.crop(player.width * i,player.height * wlrow,player.width,player.height),
+			speed:framespeed
+		});
+		wuframes.push({
+			frame:player.sheet.crop(player.width * i,player.height * wurow,player.width,player.height),
+			speed:framespeed
+		});
+		wdframes.push({
+			frame:player.sheet.crop(player.width * i,player.height * wdrow,player.width,player.height),
+			speed:framespeed
+		});
+		
+	}
+	
+	var idleframes = [
+	{frame:player.sheet.crop(0,0,player.width,player.height),speed:framespeed*80},
+	{frame:player.sheet.crop(player.width,0,player.width,player.height),speed:framespeed},
+	{frame:player.sheet.crop(player.width * 2,0,player.width,player.height),speed:framespeed},
+	];
+	
+	//Create Animations
+	player.addAnimation("walk_right",new Animation(wrframes));
+	player.addAnimation("walk_left",new Animation(wlframes));
+	player.addAnimation("walk_up",new Animation(wuframes));
+	player.addAnimation("walk_down",new Animation(wdframes));
+	player.addAnimation("idle",new Animation(idleframes));
+	
+	//726,798
+	//Tree Asset
+	var tree = new Assets("tree","res/textures/tree_01.png",726,798);
+	tree.redwood = tree.sheet.crop(0,0,726,798);
+	
     //Tile Asset
     var tiles = new Assets("tiles","res/textures/tiles.png",30,30);
     tiles.dirt = tiles.sheet.crop(0,tiles.height*10,tiles.width,tiles.height);

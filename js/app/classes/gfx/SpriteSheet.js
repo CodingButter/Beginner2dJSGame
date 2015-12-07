@@ -21,8 +21,7 @@ define(['Class'],function(Class){
         init:function(_sheet){
             this.sheet = _sheet;
         },
-
-        crop:function(_x,_y,_width,_height){
+		crop:function(_x,_y,_width,_height){
             return {"sheet":this.sheet,"x":_x,"y":_y,"width":_width,"height":_height};
         }
     });

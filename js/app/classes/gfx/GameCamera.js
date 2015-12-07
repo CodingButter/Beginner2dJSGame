@@ -33,6 +33,7 @@ define(['Class','Tile'],function(Class,Tile){
             yOffset += _yAmt;
             this.checkBlankSpace();
         },
+		
         //Getters
         getxOffset:function(){
             return parseInt(xOffset);
@@ -40,6 +41,7 @@ define(['Class','Tile'],function(Class,Tile){
         getyOffset:function(){
             return parseInt(yOffset);
         },
+		
         //Setters
         setxOffset:function(_offset){
             xOffset = _offset;

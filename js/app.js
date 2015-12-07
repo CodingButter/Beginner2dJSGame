@@ -22,7 +22,7 @@ requirejs.config({
         "Class":"libs/class",
         "Jquery":"libs/jquery",
         //Classes
-        "Animation":"app/classes/gfx/Animation",
+		"Animation":"app/classes/gfx/Animation",
         "Assets":"app/classes/gfx/Assets",
         "Creature":"app/classes/entities/creatures/Creature",
         "DirtTile":"app/classes/tiles/DirtTile",
@@ -40,10 +40,12 @@ requirejs.config({
         "Rectangle":"app/classes/gfx/shapes/Rectangle",
         "SpriteSheet":"app/classes/gfx/SpriteSheet",
         "State":"app/classes/states/State",
-        "StoneTile":"app/classes/tiles/StoneTile",
+		"StaticEntity":"app/classes/entities/statics/StaticEntity",
+		"StoneTile":"app/classes/tiles/StoneTile",
         "Tile":"app/classes/tiles/Tile",
         "TileLoader":"app/classes/tiles/TileLoader",
-        "Utils":"app/classes/utils/Utils",
+		"Tree":"app/classes/entities/statics/Tree",
+		"Utils":"app/classes/utils/Utils",
         "World":"app/classes/worlds/World"
     }
 });

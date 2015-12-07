@@ -26,7 +26,6 @@ define(['Jquery','Class'],function($,Class){
             height = _height;
             createDisplay();
         },
-
         //Getters
         getTitle:function(){
             return title;

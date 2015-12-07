@@ -26,7 +26,6 @@ define(['Class'],function(Class){
         tick:function(_dt){},
         render:function(_g){}
     });
-
     State.getState = function(){
         return currentState;
     };

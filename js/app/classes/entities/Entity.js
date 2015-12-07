@@ -27,8 +27,12 @@ define(['Class','Rectangle'],function(Class,Rectangle){
             this.handler = _handler;
             this.bounds = new Rectangle(0,0,_width,_height);
         },
-        tick:function(_dt){},
-        render:function(_g){},
+        tick:function(){
+			throw("Entities Must Have a Tick Function");
+		},
+        render:function(){
+			throw("Entities Must Have a Tick Function");
+		},
 
         //Getters
         getX:function(){

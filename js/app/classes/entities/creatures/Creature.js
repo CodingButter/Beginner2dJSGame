@@ -76,14 +76,16 @@ define(['Entity',"Tile"],function(Entity,Tile){
         collisionWithTile:function(_x,_y){
             return this.handler.getWorld().getTile(_x,_y).isSolid();
         },
-        //Getters
+        
+		//Getters
         getHealth:function(){
             return this.health;
         },
         getSpeed:function(){
             return this.speed;
         },
-        //Setters
+        
+		//Setters
         setHealth:function(_health){
             this.health = _health;
         },
