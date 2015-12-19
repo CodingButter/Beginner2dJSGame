@@ -41,7 +41,23 @@ define(['Class','Rectangle'],function(Class,Rectangle){
         getHeight:function(){
             return this.height;
         },
-
+        getCollisionBounds:function(xOffset,yOffset){
+            return new Rectangle(parseInt(this.x+this.bounds.x + xOffset),
+                                 parseInt(this.y+this.bounds.y+ yOffset),
+                                 this.bounds.width,this.bounds.height);
+        },
+        checkEntityCollisions:function(xOffset,yOffset){
+            var candidates = this.handler.getWorld().getEntityManager().getEntities();
+            for(var i=0;i<candidates.length;i++){
+                var e = candidates[i];
+                if(e!=this){
+                    if(e.getCollisionBounds(0,0).intersects(this.getCollisionBounds(xOffset,yOffset))){
+                        return true;
+                    }
+                }
+            }
+            return false;
+        },
         //Setters
         setX:function(_x){
             this.x = _x;
