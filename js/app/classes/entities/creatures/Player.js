@@ -19,7 +19,6 @@ define(['Creature','Assets'],function(Creature,Assets){
             this.bounds.y = 32;
             this.bounds.width = 25;
             this.bounds.height = 32;
-
         },
         tick:function(_dt){
             this.getInput(_dt);

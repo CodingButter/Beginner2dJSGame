@@ -18,8 +18,8 @@ define(['Class','Tile'],function(Class,Tile){
             handler = _handler;
         },
         centerOnEntity:function(e){
-            xOffset = e.getX() - handler.getWidth()/2 + e.getWidth()/2;
-            yOffset = e.getY() - handler.getHeight()/2 + e.getHeight()/2;
+            xOffset = parseInt(e.getX() - handler.getWidth()/2 + e.getWidth()/2);
+            yOffset = parseInt(e.getY() - handler.getHeight()/2 + e.getHeight()/2);
             this.checkBlankSpace();
         },
         move:function(_xAmt,_yAmt){

@@ -16,6 +16,6 @@ define(function(){
         var image = new Image();
         image.src = _path;
         return image;
-    }
+    };
     return ImageLoader;
 });

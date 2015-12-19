@@ -9,14 +9,17 @@
  * jamie337nichols
  * Jamie337nichols@gmail.com
  */
-define(['State','Player','World'],function(State,Player,World){
-    var x = 0;
-    var y = 0;
+define(['State','Player','World','Tile'],function(State,Player,World,Tile){
+    var ex = 28*Tile.TILEWIDTH;
+    var ey = 28*Tile.TILEHEIGHT;
+
     var GameState = State.extend({
         init:function(_handler){
             this._super(_handler);
             this.player = new Player(_handler,43,43);
             this.world = new World("res/worlds/world1.wrd",_handler);
+            this.player.setX(this.world.spawnX);
+            this.player.setY(this.world.spawnY);
         },
 		tick:function(_dt){
             this.world.tick(_dt);
@@ -25,7 +28,6 @@ define(['State','Player','World'],function(State,Player,World){
 		render:function(_g){
             this.world.render(_g);
             this.player.render(_g);
-
         }
     });
 

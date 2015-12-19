@@ -24,6 +24,7 @@ requirejs.config({
         //Classes
 		"Animation":"app/classes/gfx/Animation",
         "Assets":"app/classes/gfx/Assets",
+        "Astar":"app/classes/utils/Astar",
         "Creature":"app/classes/entities/creatures/Creature",
         "DirtTile":"app/classes/tiles/DirtTile",
         "Display":"app/classes/display/Display",
