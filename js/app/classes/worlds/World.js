@@ -9,7 +9,7 @@
  * jamie337nichols
  * Jamie337nichols@gmail.com
  */
-define(['Class','TileLoader','Utils',],function(Class,Tile,Utils){
+define(['Class','TileLoader','Utils','EntityManager','Player','Tree'],function(Class,Tile,Utils,EntityManager,Player,Tree){
 
   
   var World = Class.extend({
@@ -17,7 +17,14 @@ define(['Class','TileLoader','Utils',],function(Class,Tile,Utils){
             this.tiles = [];
             this.handler = _handler;
             _handler.setWorld(this);
+            this.entityManager = new EntityManager(_handler,new Player(_handler,100,100));
+            this.entityManager.addEntity(new Tree(_handler,100,400));
+            this.entityManager.addEntity(new Tree(_handler,200,500));
+            this.entityManager.addEntity(new Tree(_handler,200,450));
+            this.entityManager.addEntity(new Tree(_handler,300,700));
             this.loadWorld(_path);
+            this.entityManager.getPlayer().setX(this.spawnX);
+            this.entityManager.getPlayer().setY(this.spawnY);
         },
         loadWorld:function(_path){
             var file = Utils.loadFileAsString(_path);
@@ -35,6 +42,7 @@ define(['Class','TileLoader','Utils',],function(Class,Tile,Utils){
             }
         },
         tick:function(_dt) {
+            this.entityManager.tick(_dt);
         },
         render:function(_g){
             var xStart = parseInt(Math.max(0,
@@ -52,7 +60,7 @@ define(['Class','TileLoader','Utils',],function(Class,Tile,Utils){
                     this.getTile(x,y).render(_g,x * Tile.TILEWIDTH - this.handler.getGameCamera().getxOffset(),y * Tile.TILEHEIGHT - this.handler.getGameCamera().getyOffset());
                 }
             }
-
+            this.entityManager.render(_g);
         },
         getTile:function(_x,_y){
             return Tile.tiles[this.tiles[_x][_y]];

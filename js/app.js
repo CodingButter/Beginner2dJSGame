@@ -29,6 +29,7 @@ requirejs.config({
         "DirtTile":"app/classes/tiles/DirtTile",
         "Display":"app/classes/display/Display",
         "Entity":"app/classes/entities/Entity",
+        "EntityManager":"app/classes/entities/EntityManager",
         "Game":"app/classes/Game",
         "GameCamera":"app/classes/gfx/GameCamera",
         "GameState":"app/classes/states/GameState",
