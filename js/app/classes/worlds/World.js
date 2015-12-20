@@ -9,7 +9,7 @@
  * jamie337nichols
  * Jamie337nichols@gmail.com
  */
-define(['Class','TileLoader','Utils','EntityManager','Player','Tree'],function(Class,Tile,Utils,EntityManager,Player,Tree){
+define(['Class','TileLoader','Utils','EntityManager','Player','Tree','SpatialGrid'],function(Class,Tile,Utils,EntityManager,Player,Tree,SpatialGrid){
 
   
   var World = Class.extend({
@@ -18,9 +18,10 @@ define(['Class','TileLoader','Utils','EntityManager','Player','Tree'],function(C
             this.handler = _handler;
             _handler.setWorld(this);
             this.entityManager = new EntityManager(_handler,new Player(_handler,100,100));
+            this.loadWorld(_path);
+            this.spatialGrid = new SpatialGrid(this.width * Tile.TILEWIDTH,this.height * Tile.TILEHEIGHT,100);
             this.entityManager.addEntity(new Tree(_handler,100,400));
             this.entityManager.addEntity(new Tree(_handler,300,400));
-            this.loadWorld(_path);
             this.entityManager.getPlayer().setX(this.spawnX);
             this.entityManager.getPlayer().setY(this.spawnY);
         },
@@ -71,6 +72,9 @@ define(['Class','TileLoader','Utils','EntityManager','Player','Tree'],function(C
         },
         getEntityManager:function(){
             return this.entityManager;
+        },
+        getSpatialGrid:function(){
+            return this.spatialGrid;
         }
     });
 

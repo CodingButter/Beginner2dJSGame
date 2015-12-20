@@ -9,7 +9,7 @@
  * jamie337nichols
  * Jamie337nichols@gmail.com
  */
-define(['Entity',"Tile"],function(Entity,Tile){
+define(['Entity','Tile','Rectangle'],function(Entity,Tile,Rectangle){
 
     var DEFAULT_SPEED = 250,
         DEFAULT_HEALTH = 10,
@@ -25,10 +25,14 @@ define(['Entity',"Tile"],function(Entity,Tile){
             this.yMove = 0;
         },
         move:function(){
-            if(!this.checkEntityCollisions(this.xMove,0))
-                this.moveX();
-            if(!this.checkEntityCollisions(0,this.yMove))
-                this.moveY();
+            if(Math.abs(this.xMove)>0 || Math.abs(this.yMove)>0) {
+                this.handler.getWorld().getSpatialGrid().remove(new Rectangle(this.x + this.bounds.x,this.y+this.bounds.y,this.bounds.width,this.bounds.height),this);
+                if (!this.checkEntityCollisions(this.xMove, 0))
+                    this.moveX();
+                if (!this.checkEntityCollisions(0, this.yMove))
+                    this.moveY();
+                this.handler.getWorld().getSpatialGrid().insert(new Rectangle(this.x + this.bounds.x,this.y+this.bounds.y,this.bounds.width,this.bounds.height),this);
+            }
         },
         moveX:function(){
             if(this.xMove>0){
