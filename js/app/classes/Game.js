@@ -9,11 +9,11 @@
  * jamie337nichols
  * Jamie337nichols@gmail.com
  */
-define(['Class','Display','State','GameState','KeyManager','Handler','GameCamera'],function(Class,Display,State,GameState,KeyManager,Handler,GameCamera){
+define(['Class','Display','State','GameState','KeyManager','MouseManager','Handler','GameCamera'],function(Class,Display,State,GameState,KeyManager,MouseManager,Handler,GameCamera){
 
     var _this;
     var running = false;
-    var title,width,height,g,display,keyManager,handler,gameCamera;
+    var title,width,height,g,display,keyManager,mouseManager,handler,gameCamera;
     var gameState,menuState,settingsState;
 
     var Game = Class.extend({
@@ -22,7 +22,6 @@ define(['Class','Display','State','GameState','KeyManager','Handler','GameCamera
             title = _title;
             width = _width;
             height = _height;
-            keyManager = new KeyManager();
         },
         run:function(){
             init();
@@ -60,6 +59,12 @@ define(['Class','Display','State','GameState','KeyManager','Handler','GameCamera
 		getKeyManager:function() {
             return keyManager;
         },
+        getMouseManager:function(){
+            return mouseManager;
+        },
+        getDisplay:function(){
+            return display;
+        },
         getWidth:function(){
             return width;
         },
@@ -68,18 +73,27 @@ define(['Class','Display','State','GameState','KeyManager','Handler','GameCamera
         },
         getGameCamera:function(){
             return gameCamera;
+        },
+        click:function(_btn){
+            if(State.getState()!=null){
+                State.getState().click(_btn);
+            }
         }
     });
     function init(){
-        display = new Display(title,width,height);
-        g = display.getGraphics();
         handler = new Handler(_this);
+        display = new Display(title,width,height);
+        keyManager = new KeyManager();
+        mouseManager = new MouseManager(handler);
+        g = display.getGraphics();
+
         gameCamera = new GameCamera(handler,0,0);
         gameState = new GameState(handler);
         State.setState(gameState);
     }
     function tick(_dt) {
         keyManager.tick();
+        mouseManager.tick();
         if(State.getState()!=null){
             State.getState().tick(_dt);
         }

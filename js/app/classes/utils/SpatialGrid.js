@@ -39,7 +39,7 @@ define(['Class'],function(Class){
             for(var y = startY;y<=endY;y++){
                 for(var x = startX;x<=endX;x++){
                     grid[x][y].forEach(function(e){
-                        if(e !== _ent)
+                        if(e !== _ent && entities.indexOf(e)==-1)
                             entities.push(e);
                     });
                 }

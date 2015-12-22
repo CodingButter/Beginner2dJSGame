@@ -27,7 +27,9 @@ define(['Class','Rectangle'],function(Class,Rectangle){
         render:function(){
 			throw("Entities Must Have a Tick Function");
 		},
-
+        click:function(){
+            throw("Entities Must Have a Click Function");
+        },
         //Getters
         getX:function(){
             return this.x;
@@ -71,6 +73,16 @@ define(['Class','Rectangle'],function(Class,Rectangle){
         },
         setHeight:function(_height){
             this.height = _height;
+        },
+        getDistance:function(_ent){
+            var xdist = this.x - _ent.x;
+            var ydist = this.y - _ent.y;
+            return Math.sqrt(xdist*xdist+ydist*ydist);
+        },
+        getAngleTo:function(_ent){
+            var xdist = _ent.x - this.x;
+            var ydist = _ent.y - this.y;
+            return Math.atan2(ydist,xdist);
         }
     });
 

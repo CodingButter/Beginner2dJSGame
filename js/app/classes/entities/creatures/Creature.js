@@ -84,6 +84,15 @@ define(['Entity','Tile','Rectangle'],function(Entity,Tile,Rectangle){
         getSpeed:function(){
             return this.speed;
         },
+        getMovementSpeed:function(){
+            this.lastX = this.currentX || this.x;
+            this.lastY = this.currentY || this.y;
+            this.currentX = this.x;
+            this.currentY = this.y;
+            var speedX = this.currentX - this.lastX;
+            var speedY = this.currentY - this.lastY;
+            return Math.sqrt(speedX*speedX+speedY*speedY);
+        },
         
 		//Setters
         setHealth:function(_health){

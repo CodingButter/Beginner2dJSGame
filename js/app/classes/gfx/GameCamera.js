@@ -39,9 +39,11 @@ define(['Class','Tile'],function(Class,Tile){
         //Setters
         setxOffset:function(_offset){
             xOffset = _offset;
+            this.checkBlankSpace();
         },
         setyOffset:function(_offset){
             yOffset = _offset;
+            this.checkBlankSpace();
         },
         checkBlankSpace:function(){
             if(xOffset<0){

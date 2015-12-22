@@ -21,6 +21,11 @@ define(['Class','Rectangle'],function(Class,Rectangle){
                 e.render(_g);
             });
         },
+        click:function(_btn){
+            entities.forEach(function(e){
+                e.click(_btn);
+            });
+        },
         //Getters
         getPlayer:function(){
             return player;
